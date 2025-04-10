@@ -7,8 +7,7 @@ This project is a Flask-based web application that allows users to log in to the
 ```
 Glitched Da Kitty Cats Discord Token Login Tool
 ├── scripts
-│   ├── discord_login.py    # Functions for Discord login functionality
-│   └── utils.py            # Utility functions for token management and session handling
+│   └── utils.py            # Nothing Legit Nothing ( used to have stuff doesnt now )
 ├── static
 │   ├── css
 │   │   └── styles.css      # CSS styles for the web application

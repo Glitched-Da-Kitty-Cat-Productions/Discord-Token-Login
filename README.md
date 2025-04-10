@@ -56,6 +56,10 @@ Glitched Da Kitty Cats Discord Token Login Tool
 
 3. Enter your Discord token to log in. You can switch tokens as needed.
 
+## Troubleshooting
+
+- Ensure the `templates` folder is in the same directory as `app.py`. If you move the `app.py` file, update the `template_folder` path in the `Flask` app initialization accordingly.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.

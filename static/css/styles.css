@@ -1,0 +1,162 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: white;
+}
+
+form {
+    background: #2a2a4e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 350px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #55559b;
+    border-radius: 5px;
+    background-color: #1e1e2f;
+    color: white;
+}
+
+form button {
+    background: #7289da;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #5b6e9e;
+}
+
+form button:active {
+    background-color: #4a4a7a;
+    transform: translateY(2px);
+}
+
+.container {
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    background: #1b1b3f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e1e2f;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #2a2a4e;
+    color: white;
+    border: 2px solid #55559b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2d2d6b;
+    border-color: #7979d4;
+}
+
+button:active {
+    background-color: #4a4a7a;
+    transform: translateY(2px);
+}
+
+.credits-button {
+    background-color: #4caf50;
+    color: white;
+    border: 2px solid #3e8e41;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.credits-button:hover {
+    background-color: #45a049;
+    border-color: #2e7031;
+}
+
+.credits-button:active {
+    background-color: #3e8e41;
+    transform: translateY(2px);
+}
+
+.discord-button {
+    background-color: #7289da; 
+    color: white;
+    border: 2px solid #5b6e9e;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.discord-button:hover {
+    background-color: #5b6e9e;
+    border-color: #4a4a7a;
+}
+
+.discord-button:active {
+    background-color: #4a4a7a;
+    transform: translateY(2px);
+}
+
+.click-text {
+    font-size: 20px;
+    color: #ccc;
+    margin-top: 20px;
+}

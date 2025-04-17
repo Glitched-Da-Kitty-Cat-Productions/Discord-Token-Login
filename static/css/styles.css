@@ -63,7 +63,7 @@ form button:active {
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 18%;
     transform: translate(-50%, -50%);
     overflow: hidden;
     text-align: center;
@@ -159,4 +159,27 @@ button:active {
     font-size: 20px;
     color: #ccc;
     margin-top: 20px;
+}
+.token_list {
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left:  82%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    background: #1b1b3f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.token_list h1{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.token_list #saved_tokens {
+    
 }

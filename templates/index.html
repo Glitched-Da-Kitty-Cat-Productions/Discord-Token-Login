@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discord Token Login Tool</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notifications.css') }}">
 </head>
 <body>
 <div class="container">
     <h1>Login to Discord</h1>
-    <form method="POST" action="/login">
+    <form method="POST" id="loginForm">
         <label for="token">Discord Token:</label>
         <input type="text" id="token" name="token" required>
         <button type="submit">Login</button>
     </form>
-    <form method="POST" action="/switch_token">
+    <form method="POST" id="switchForm">
         <label for="new_token">Switch Token:</label>
         <input type="text" id="new_token" name="new_token" required>
         <button type="submit">Switch Token</button>
@@ -22,17 +23,21 @@
     <button class="credits-button" onclick="window.open('https://glitched-da-kitty-cat.is-a.dev/', '_blank')">Credits: Glitched Da Kitty Cat - Maker</button>
     <button class="discord-button" onclick="window.open('https://discord.gg/f87DTxdHTA', '_blank')">My Discord</button>
 </div>
-<!-- 
 <div class="token_list">
     <h1>Your Saved Tokens</h1>
-    <tb>
-        <tr>
-            <th>Token</th>
-            <th>Actions</th>
-        </tr>
-    </tb>
+    <table class="token_list_table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Token</th>
+            </tr>
+        </thead>
+        <tbody id="List"></tbody>
+    </table>
 </div>
--->
+<div id="notification-container" class="notification-container"></div>
+<script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 <script src="{{ url_for('static', filename='js/saving_token.js') }}"></script>
 </body>
 </html>

@@ -10,9 +10,18 @@ Glitched Da Kitty Cats Discord Token Login Tool
 │   └── utils.py            # Nothing Legit Nothing ( used to have stuff doesnt now )
 ├── static
 │   ├── css
-│   │   └── styles.css      # CSS styles for the web application
+│   │   └── styles.css      # CSS styles for main page
+│   │   └── notifcations.css  # CSS styles for notifactions
+│   ├── icons
+│   │   └── error.svg # Icon representing an error message for notifactions
+│   │   └── info.svg # Icon representing an information message for notifactions
+│   │   └── success.svg # Icon representing an success message for notifactions
+│   ├── images
+│   │   └── discord.ico # Icon representing the Discord application
 │   └── js
 │       └── login.js        # JavaScript functions for logging in with a Discord token
+│       └── notifications.js # JavaScript functions for displaying notifications to the user
+│       └── saving_token.js # JavaScript functions for saving the Discord token securely
 ├── templates
 │   └── index.html          # Main HTML template for the web application
 ├── app.py                  # Main entry point of the Flask application

@@ -15,7 +15,7 @@
         <input type="text" id="token" name="token" required>
         <button type="submit">Login</button>
     </form>
-    <form method="POST" id="switchForm">
+    <form id="switchForm">
         <label for="new_token">Switch Token:</label>
         <input type="text" id="new_token" name="new_token" required>
         <button type="submit">Switch Token</button>
@@ -24,6 +24,14 @@
     <button class="discord-button" onclick="window.open('https://discord.gg/f87DTxdHTA', '_blank')">My Discord</button>
 </div>
 <div class="token_list">
+    <h1>Save Token Information</h1>
+    <form method="POST" id="saveShit">
+        <label for="token">Discord Token:</label>
+        <input type="text" id="save_token" name="save_token" required>
+        <label for="name">Discord Token Name:</label>
+        <input type="text" id="Name" name="Name" required>
+        <button type="submit">Add Token</button>
+    </form>
     <h1>Your Saved Tokens</h1>
     <table class="token_list_table">
         <thead>
@@ -38,6 +46,7 @@
 <div id="notification-container" class="notification-container"></div>
 <script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <script src="{{ url_for('static', filename='js/saving_token.js') }}"></script>
 </body>
 </html>

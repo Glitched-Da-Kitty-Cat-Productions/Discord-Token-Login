@@ -2,11 +2,11 @@ function showNotification(message, type = "info") {
     const container = document.getElementById("notification-container");
     const notification = document.createElement("div");
     
-    const errorIcon = type === "error" ? `<img src="icons/error.svg" alt="Error Icon" class="notification-icon">` : '';
+    const errorIcon = type === "error" ? `<img src="static/icons/error.svg" alt="Error Icon" class="notification-icon">` : '';
     
-    const infoIcon = type === "info" ? `<img src="icons/info.svg" alt="Information Icon" class="notification-icon">` : '';
+    const infoIcon = type === "info" ? `<img src="static/icons/info.svg" alt="Information Icon" class="notification-icon">` : '';
 
-    const successIcon = type === "success" ? `<img src="icons/success.svg" alt="Success Icon" class="notification-icon">` : '';
+    const successIcon = type === "success" ? `<img src="static/icons/success.svg" alt="Success Icon" class="notification-icon">` : '';
 
     notification.className = `notification ${type}`;
     

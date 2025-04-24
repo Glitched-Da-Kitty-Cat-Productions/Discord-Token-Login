@@ -3,11 +3,27 @@ import random
 import requests
 import time
 from selenium import webdriver
+import json
 
 app = Flask(__name__)
 app.secret_key = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz0123456789', k=16))
 driver = None
-
+def add_to_json(file_path, new_data):
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        data = {} 
+    
+    if isinstance(data, dict):
+      data.update(new_data)
+    elif isinstance(data, list):
+      data.append(new_data)
+    else:
+      raise TypeError("JSON data is not a dictionary or a list.")
+      
+    with open(file_path, 'w') as file:
+        json.dump(data, file, indent=4)
 def open_discord_with_token(token):
     global driver
     try:
@@ -74,5 +90,11 @@ def switch():
         return redirect(url_for('index'))
     return "Failed to switch token", 400
 
+@app.route('/save-token', methods=['POST'])
+def save():
+    json_path = "static/information/savedTokens.json"
+    data_request = request.form.get('data')
+    add_to_json(json_path, data_request)
+    return 'Test'
 if __name__ == '__main__':
     app.run(debug=True)

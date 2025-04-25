@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 import random
 import requests
 import time
@@ -54,7 +54,26 @@ def open_discord_with_token(token):
         time.sleep(4)
     except Exception as e:
         print(f"Error opening browser: {e}")
+def load_tokens():
+  try:
+    with open('savedToken.json', 'r') as f:
+      return json.load(f)
+  except FileNotFoundError:
+    return []
 
+def save_tokens(token_list):
+  with open('savedToken.json', 'w') as f:
+    json.dump(token_list, f)
+
+@app.route('/getTokens', methods=['GET'])
+def get_tokens():
+  return jsonify(load_tokens())
+
+@app.route('/saveTokens', methods=['POST'])
+def save_tokens_route():
+  token_list = request.get_json()
+  save_tokens(token_list)
+  return jsonify(token_list)
 def validate_token(token):
     url = "https://discord.com/api/v10/users/@me"
     headers = {

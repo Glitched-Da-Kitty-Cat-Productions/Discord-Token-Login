@@ -7,24 +7,27 @@ This project is a Flask-based web application that allows users to log in to the
 ```
 Glitched Da Kitty Cats Discord Token Login Tool
 ├── scripts
-│   └── utils.py            # Nothing Legit Nothing ( used to have stuff doesnt now )
+│   └── utils.py            # Utility functions for the project
 ├── static
 │   ├── css
 │   │   └── styles.css      # CSS styles for main page
-│   │   └── notifcations.css  # CSS styles for notifactions
+│   │   └── notifications.css  # CSS styles for notifications
 │   ├── icons
-│   │   └── error.svg # Icon representing an error message for notifactions
-│   │   └── info.svg # Icon representing an information message for notifactions
-│   │   └── success.svg # Icon representing an success message for notifactions
+│   │   └── error.svg # Icon representing an error message for notifications
+│   │   └── info.svg # Icon representing an information message for notifications
+│   │   └── success.svg # Icon representing a success message for notifications
 │   ├── images
 │   │   └── discord.ico # Icon representing the Discord application
 │   └── js
 │       └── login.js        # JavaScript functions for logging in with a Discord token
 │       └── notifications.js # JavaScript functions for displaying notifications to the user
 │       └── saving_token.js # JavaScript functions for saving the Discord token securely
+│       └── token_switcher.js # JavaScript functions for switching between Discord tokens
 ├── templates
 │   └── index.html          # Main HTML template for the web application
+│   └── token_manager.html  # HTML template for managing Discord tokens
 ├── app.py                  # Main entry point of the Flask application
+├── config.py               # Configuration file for the Flask application
 ├── requirements.txt        # Python dependencies required for the project
 └── README.md               # Documentation for the project
 ```

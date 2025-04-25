@@ -62,8 +62,22 @@ def load_tokens():
     return []
 
 def save_tokens(token_list):
-  with open('static/information/savedTokens.json', 'w') as f:
-    json.dump(token_list, f)
+    try:
+        with open('static/information/savedTokens.json', 'r') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = []
+
+    for token in token_list:
+        new_token = {
+            "id": len(data) + 1,
+            "token": token,
+            "timestamp": int(time.time())
+        }
+        data.append(new_token)
+
+    with open('static/information/savedTokens.json', 'w') as f:
+        json.dump(data, f, indent=4)
 
 
 def validate_token(token):

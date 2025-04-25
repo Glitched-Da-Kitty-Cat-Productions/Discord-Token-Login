@@ -1,7 +1,9 @@
 const saveForm = document.getElementById('saveShit');
 const tokenListTable = document.getElementById('List');
+const loginForm = document.getElementById('loginForm');
+const switchForm = document.getElementById('switchForm');
 
-function saveToken(token, name) {
+function saveToken(token, name, type) {
   const tokenInfo = {
     token: token,
     name: name
@@ -33,15 +35,40 @@ function updateTokenList(tokenList) {
     const row = document.createElement('tr');
     const nameCell = document.createElement('td');
     const tokenCell = document.createElement('td');
+    const actionsCell = document.createElement('td');
 
     nameCell.textContent = token.name;
     tokenCell.textContent = token.token;
 
+    const loginButton = document.createElement('button');
+    loginButton.textContent = 'Login';
+    loginButton.onclick = () => {
+      document.getElementById('token').value = token.token;
+    };
+
+    const switchButton = document.createElement('button');
+    switchButton.textContent = 'Switch';
+    switchButton.onclick = () => {
+      document.getElementById('new_token').value = token.token;
+ };
+
+    actionsCell.appendChild(loginButton);
+    actionsCell.appendChild(switchButton);
+
     row.appendChild(nameCell);
     row.appendChild(tokenCell);
+    row.appendChild(actionsCell);
 
     tokenListTable.appendChild(row);
   });
+}
+
+function getTokensOnLoad() {
+  fetch('/getTokens')
+    .then(response => response.json())
+    .then(data => {
+      updateTokenList(data);
+    });
 }
 
 saveForm.addEventListener('submit', (e) => {
@@ -49,12 +76,8 @@ saveForm.addEventListener('submit', (e) => {
 
   const token = document.getElementById('save_token').value;
   const name = document.getElementById('Name').value;
-
   saveToken(token, name);
+  saveForm.reset();
 });
 
-fetch('/getTokens')
-  .then(response => response.json())
-  .then(data => {
-    updateTokenList(data);
-  });
+document.addEventListener('DOMContentLoaded', getTokensOnLoad);

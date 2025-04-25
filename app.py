@@ -56,24 +56,16 @@ def open_discord_with_token(token):
         print(f"Error opening browser: {e}")
 def load_tokens():
   try:
-    with open('savedToken.json', 'r') as f:
+    with open('static/information/savedTokens.json', 'r') as f:
       return json.load(f)
   except FileNotFoundError:
     return []
 
 def save_tokens(token_list):
-  with open('savedToken.json', 'w') as f:
+  with open('static/information/savedTokens.json', 'w') as f:
     json.dump(token_list, f)
 
-@app.route('/getTokens', methods=['GET'])
-def get_tokens():
-  return jsonify(load_tokens())
 
-@app.route('/saveTokens', methods=['POST'])
-def save_tokens_route():
-  token_list = request.get_json()
-  save_tokens(token_list)
-  return jsonify(token_list)
 def validate_token(token):
     url = "https://discord.com/api/v10/users/@me"
     headers = {
@@ -109,11 +101,14 @@ def switch():
         return redirect(url_for('index'))
     return "Failed to switch token", 400
 
-@app.route('/save-token', methods=['POST'])
-def save():
-    json_path = "static/information/savedTokens.json"
-    data_request = request.form.get('data')
-    add_to_json(json_path, data_request)
-    return 'Test'
+@app.route('/getTokens', methods=['GET'])
+def get_tokens():
+  return jsonify(load_tokens())
+
+@app.route('/saveTokens', methods=['POST'])
+def save_tokens_route():
+  token_list = request.get_json()
+  save_tokens(token_list)
+  return jsonify(token_list)
 if __name__ == '__main__':
     app.run(debug=True)

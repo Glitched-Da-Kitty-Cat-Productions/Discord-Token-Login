@@ -215,3 +215,47 @@ button:active {
 .token_list_table tr:hover {
 	background-color: #2d2d6b;
 }
+.token_list_table {
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  .token_list_table th, .token_list_table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+  }
+  
+  .token_list_table th {
+	background-color: #f0f0f0;
+  }
+  
+  .token_list_table td {
+	vertical-align: top;
+  }
+  
+  .token_list_table .actions {
+	text-align: center;
+  }
+  
+  .token_list_table .actions button {
+	margin: 5px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .token_list_table .actions button:hover {
+	background-color: #ccc;
+  }
+  
+  .token_list_table .actions .login-button {
+	background-color: #4CAF50;
+	color: #fff;
+  }
+  
+  .token_list_table .actions .switch-button {
+	background-color: #03A9F4;
+	color: #fff;
+  }
